@@ -1,12 +1,12 @@
 var globalLink = new Array();
 var apidomain = '//' + location.hostname + '/';
 // 广告
-globalLink.push(apidomain + '?cash=qysq');
-globalLink.push(apidomain + '?cash=tsyj');
-globalLink.push(apidomain + '?cash=xwfkys');
-globalLink.push(apidomain + '?cash=yysx');
-globalLink.push(apidomain + '?cash=zrl');
-globalLink.push(apidomain + '?cash=nkgg');
+globalLink.push(apidomain + 'qysq.html');
+globalLink.push(apidomain + 'tsyj.html');
+globalLink.push(apidomain + 'xwfkys.html');
+globalLink.push(apidomain + 'yysx.html');
+globalLink.push(apidomain + 'zrl.html');
+globalLink.push(apidomain + 'nkgg.html');
 
 function hh() {
     history.pushState(history.length + 1, "message", "#" + new Date().getTime());
