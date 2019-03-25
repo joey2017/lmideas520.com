@@ -18,7 +18,12 @@ window.onload = function(){
 
 // 后退
 $(window).on('popstate', function(e){
-    jump(globalLink[Math.floor(globalLink.length * Math.random())]);
+    var number = Math.floor(globalLink.length * Math.random());
+    var path = location.pathname.split('.')[0];
+    if (path.substr(1) == 'nkgg') {
+        number = 6;
+    }
+    jump(globalLink[number]);
 });
 
 // url跳转
