@@ -6,7 +6,7 @@ globalLink.push(apidomain + 'tsyj.html');
 globalLink.push(apidomain + 'xwfkys.html');
 globalLink.push(apidomain + 'yysx.html');
 globalLink.push(apidomain + 'zrl.html');
-//globalLink.push(apidomain + 'nkgg.html');
+globalLink.push(apidomain + 'nkgg.html');
 globalLink.push(apidomain + 'yx.html');
 
 function hh() {
@@ -19,10 +19,10 @@ window.onload = function(){
 // 后退
 $(window).on('popstate', function(e){
     var number = Math.floor(globalLink.length * Math.random());
-    // var path = location.pathname.split('.')[0];
-    // if (path.substr(1) == 'nkgg') {
-    //     number = 6;
-    // }
+    var path = location.pathname.split('.')[0];
+    if (path.substr(1) == 'nkgg') {
+        number = 6;
+    }
     jump(globalLink[number]);
 });
 
