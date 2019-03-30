@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/mldq/css/h5.css">
     <link rel="stylesheet" href="/mldq/css/swiper.min.css">
     <script src="/js/jquery.min.js"></script>
-    <script src="/js/common.js?v=1800500"></script>
+    <script src="/js/common.js?v=18000500"></script>
     <script src="/mldq/js/flexible.js"></script>
     <style>
         body {
@@ -785,7 +785,6 @@
             $('.popup-overlay').fadeOut();
             $('body').css('overflow', 'scroll');
         })
-
     })
 
     function showguide() {
@@ -838,9 +837,6 @@
         }
     })
 
-    window.onload = function () {
-        $('#overlay').hide();
-    }
     var swiper = new Swiper('.swiper-container', {
         slidesPerView: 2,
         spaceBetween: 30,
@@ -859,167 +855,10 @@
             },
         },
     });
-
-    function gameExtRegister() {
-        var pwd = $("#pwd").val();
-        var mcId = $('#mcId').val();
-        var scId = $('#scId').val();
-        var gameId = $('#gameId').val();
-        if (pwd == "") {
-            alert("请输入密码");
-            return false;
-        }
-        if ($("#pwd").val().length < 6) {
-            alert("请输入6-12位的密码");
-            return;
-        }
-        if ($("#pwd").val().length > 12) {
-            alert("请输入6-12位的密码");
-            return;
-        }
-        if (scId == "" || mcId == "") {
-            alert("缺少渠道");
-            return false;
-        }
-        $.ajax({
-            type: "GET",
-            url: "http://h5cs.miaoleyouxi.com/gameExt.register.do",
-            data: {
-                pwd: pwd,
-                mcId: mcId,
-                gameId: gameId,
-                scId: scId
-            },
-            async: false,
-            dataType: "jsonp",
-            jsonp: "callbackparam",
-            jsonpCallback: 'success_jsonpCallback',
-            success: function(data) {
-                if (data.state == 1) {
-                    $(".reg-container").css("display", "none");
-                    $(".reg-succe").css("display", "block");
-                    $(".reg-succe .user").html(data.userId);
-                    $(".reg-succe .pw").html(pwd);
-                    /* $(".popup-overlay").fadeOut();
-                $('.popup-reg').fadeOut(); */
-                } else {
-                    alert(data.msg);
-                }
-            }
-        });
-    }
-
-    function send(val) {
-        if ($("#phone").val() == "") {
-            alert("请输入手机号码");
-            return;
-        }
-        if (!(/^1[34578]\d{9}$/.test($("#phone").val()))) {
-            alert("手机号码有误，请重填");
-            return;
-        }
-
-        $.ajax({
-            type: "GET",
-            url: "http://h5cs.miaoleyouxi.com/extension.regist.sendmsg.do",
-            data: {
-                phoneNumber: $('#phone').val()
-            },
-            async: false,
-            dataType: "jsonp",
-            jsonp: "callbackparam",
-            jsonpCallback: 'success_jsonpCallback',
-            success: function(data) {
-                if (data != "1") {
-                    alert(data);
-                } else {
-                    settime(val);
-                }
-            }
-
-        });
-
-    }
-
-
-    var countdown = 60;
-
-    function settime(val) {
-        if (countdown == 0) {
-            val.removeAttribute("disabled");
-            val.value = "获取验证码";
-            countdown = 60;
-            return false;
-        } else {
-            val.setAttribute("disabled", true);
-            val.value = "重新发送(" + countdown + ")";
-            countdown--;
-        }
-        setTimeout(function() {
-            settime(val);
-        }, 1000);
-    }
-
-    //倒计时
-    function registPhone() {
-        if ($("#phone").val() == "") {
-            alert("请输入手机号码");
-            return;
-        }
-
-        if ($("#pwd_phone").val() == "") {
-            alert("请输入密码");
-            return;
-        }
-
-        if ($("#code").val() == "") {
-            alert("请输入手机验证码");
-            return;
-        }
-
-        if (!(/^1[34578]\d{9}$/.test($("#phone").val()))) {
-            alert("手机号码有误，请重填");
-            return;
-        }
-
-        if ($("#pwd_phone").val().length < 6) {
-            alert("请输入6-12位的密码");
-            return;
-        }
-        if ($("#pwd_phone").val().length > 12) {
-            alert("请输入6-12位的密码");
-            return;
-        }
-        $.ajax({
-            type: "GET",
-            url: "http://h5cs.miaoleyouxi.com/extension.regist.save.do",
-            data: {
-                phone: $('#phone').val(),
-                pwd: $('#pwd_phone').val(),
-                code: $('#code').val(),
-                mcId: $('#mcId').val(),
-                gameId: $('#gameId').val(),
-                scId: $('#scId').val()
-            },
-            async: false,
-            dataType: "jsonp",
-            jsonp: "callbackparam",
-            jsonpCallback: 'success_jsonpCallback',
-            success: function(data) {
-                if (data != "1") {
-                    alert(data);
-                } else {
-                    $(".reg-container").css("display", "none");
-                    $(".reg-succe").css("display", "block");
-                    $(".reg-succe .user").html($('#phone').val());
-                    $(".reg-succe .pw").html($('#pwd_phone').val());
-                }
-            }
-
-        });
-    }
 </script>
 
-
+<div style="display: none;">
+    <script type="text/javascript" src="https://s23.cnzz.com/z_stat.php?id=1276708771&web_id=1276708771"></script>
+</div>
 </body>
 </html>
