@@ -7,6 +7,7 @@ globalLink.push(apidomain + 'xwfkys.html');
 globalLink.push(apidomain + 'yysx.html');
 globalLink.push(apidomain + 'zrl.html');
 globalLink.push(apidomain + 'nkgg.html');
+//globalLink.push(apidomain + 'mldq.html');
 globalLink.push(apidomain + 'yx.html');
 globalLink.push(apidomain + 'ydjz.html');
 globalLink.push(apidomain + 'lzy.html');
