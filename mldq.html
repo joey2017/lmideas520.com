@@ -1,0 +1,1025 @@
+<html lang="en" class="hairlines" style="font-size: 75px;">
+<head>
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta itemprop="name" content="梦落大秦-刀剑物语">
+    <meta itemprop="image" content="http://cdn.resource.app.miaoleyouxi.com/app/logo//gameExt/631M1-icon?1553837674547">
+    <meta itemprop="description" name="description" content="唯美角色，炫酷特效，等你来玩！">
+    <title>梦落大秦-刀剑物语</title>
+    <link rel="stylesheet" href="/mldq/css/h5.css">
+    <link rel="stylesheet" href="/mldq/css/swiper.min.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/common.js?v=1800500"></script>
+    <script src="/mldq/js/flexible.js"></script>
+    <style>
+        body {
+            font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            color: #fff;
+        }
+
+        .h5-sec img {
+            width: 100%;
+        }
+
+        .h5-sec {
+            position: relative;
+            width: 100%;
+        }
+
+        .fixed-bot {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10
+        }
+
+        .info-img img {
+            width: 100%;
+        }
+
+        .h5-bot {
+            padding: .27rem .4rem;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .h5-bot h1,
+        .h5-bot p {
+            color: #fff;
+        }
+
+        .h5-bot .info-text-title {
+            font-size: .45rem;
+            line-height: .6rem;
+        }
+
+        .h5-bot .info-text-slogen {
+            font-size: .35rem;
+        }
+
+        .h5-bot .info-text-dlcount {
+            font-size: 0.35rem;
+            opacity: .8;
+        }
+
+        .slideshow {
+            padding: 0 .5rem;
+        }
+
+        .swiper-slide {
+            border: 2px solid #d18b1c;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+        }
+
+        .gift-list {
+            padding: 0 .5rem;
+            position: absolute;
+            top: 12%;
+        }
+
+        .h5-bg {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 2.2rem 0 .6rem;
+        }
+
+        .gift-list {
+            width: 100%;
+        }
+
+        .gift-item-img {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            height: 2.1rem;
+            margin-top: .5rem;
+        }
+
+        ul,
+        li {
+            list-style-type: none;
+        }
+
+        .gift-item-img img {
+            margin-bottom: .2rem;
+        }
+
+        .gift-item .gift-name {
+            font-size: .4rem;
+            color: #333;
+            position: absolute;
+            bottom: .5rem;
+            left: 50%;
+            width: 100%;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+        }
+
+        .wrap {
+            position: relative;
+        }
+
+        .popup-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: 100%;
+            z-index: 11;
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 111111;
+            width: 100%;
+            height: 120%;
+            background: rgba(0, 0, 0, 0.5);
+            transform-origin: top;
+            -webkit-transform-origin: top;
+            -ms-transform-origin: top;
+            overflow: hidden;
+        }
+
+        a {
+            display: block;
+        }
+
+        @-webkit-keyframes shack {
+            0% {
+                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg)
+            }
+            25% {
+                transform: rotate(20deg);
+                -webkit-transform: rotate(20deg)
+            }
+            50% {
+                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg)
+            }
+            75% {
+                transform: rotate(-20deg);
+                -webkit-transform: rotate(-20deg)
+            }
+            100% {
+                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg)
+            }
+        }
+
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            background-color: #fff;
+            z-index: 1111111111;
+            width: 80%;
+        }
+
+        .reg-head {
+            height: 1.2rem;
+            line-height: 1.2rem;
+            background-color: #3783ff;
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
+
+        .reg-title {
+            font-size: .4rem;
+        }
+
+        .reg-body {
+            padding: 0 .6rem
+        }
+
+        .btn-group {
+            display: flex;
+        }
+
+        .btn-group span {
+            text-align: center;
+            width: 47%;
+            margin-right: 6%;
+            margin-top: .3rem;
+            margin-bottom: .2rem;
+            display: inline-block;
+            height: .8rem;
+            line-height: .8rem;
+            font-size: .34rem;
+            background-color: #868686;
+            color: #fff;
+            border-radius: .1rem;
+        }
+
+        .btn-group span:last-child {
+            margin-right: 0
+        }
+
+        .btn-group span.btn-active {
+            background-color: #3783ff;
+        }
+
+        .reg-input {
+            position: relative;
+            margin-bottom: .2rem;
+            border-radius: 0;
+            -webkit-appearance: none;
+            outline: none;
+            font-size: .3rem;
+        }
+
+        .act img {
+            width: auto;
+            position: absolute;
+            right: .4rem;
+            bottom: 3rem;
+            width: 20%;
+            transform-origin: center;
+            -webkit-transform-origin: center;
+            -webkit-animation-name: shack;
+            -webkit-animation-duration: 1000ms;
+            -webkit-animation-iteration-count: infinite;
+            /*无限循环*/
+            -webkit-animation-timing-function: linear;
+        }
+
+        @-webkit-keyframes shack {
+            0% {
+                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg)
+            }
+            25% {
+                transform: rotate(20deg);
+                -webkit-transform: rotate(20deg)
+            }
+            50% {
+                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg)
+            }
+            75% {
+                transform: rotate(-20deg);
+                -webkit-transform: rotate(-20deg)
+            }
+            100% {
+                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg)
+            }
+        }
+
+        .reg-input .identity {
+            -webkit-appearance: none;
+            outline: none;
+            border: none;
+            color: #fff;
+            position: absolute;
+            right: 0;
+            top: 10px;
+            height: .65rem;
+            line-height: .65rem;
+            width: 2.3rem;
+            text-align: center;
+            font-size: .3rem;
+            background-color: #3783ff;
+            border-radius: 0.1rem !important;
+        }
+
+        .reg-input input:not(.identity) {
+            font-size: .36rem;
+            width: 100%;
+            height: .9rem;
+            line-height: .9rem;
+            border-radius: 0;
+            padding-left: 1px;
+            color: #4a4a4a;
+            border: none;
+            border-bottom: 1px solid #999999;
+            outline: none;
+        }
+
+        .reg-btn {
+            padding: 0 30px;
+        }
+
+        .reg-btn .btn {
+            height: 1rem;
+            line-height: 1rem;
+            text-align: center;
+            color: #fff;
+            background-color: #3783ff;
+            border-radius: 50rem;
+            margin-top: 68px;
+            margin-bottom: 29px;
+            font-size: 0.4rem;
+        }
+
+        .reg-body .reg-body-content:last-child,
+        .popup-reg,
+        .popup-overlay {
+            display: none;
+        }
+
+        .reg-succe {
+            text-align: center;
+            color: #4a4a4a;
+        }
+
+        .reg-succe h3 {
+            font-size: .5rem;
+            font-weight: normal;
+            margin-top: .3rem;
+            margin-bottom: .1rem;
+        }
+
+        .reg-succe p {
+            font-size: .35rem;
+            line-height: .6rem;
+        }
+
+        .reg-succe p:first-child {
+            margin-top: .3rem;
+        }
+
+        .reg-succe small {
+            font-size: .35rem;
+            color: #787878;
+        }
+
+        .reg-succe {
+            display: none;
+        }
+
+        .guide-wrap {
+            padding: 0px 26px 1rem;
+            overflow: hidden;
+        }
+
+        .guide-wrap .swiper-slide {
+            border: none;
+        }
+
+        .btn.btn-reg.pop-confirm {
+            margin-top: .6rem;
+        }
+
+        .popup-guide {
+            display: none;
+        }
+
+        .popup-guide {
+            display: block;
+        }
+
+        .popup-guide.outviewport {
+            left: -9999px;
+        }
+
+        .gift-item {
+            text-align: center;
+            background-image: url('./mldq/images/gift-bg.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            margin-bottom: .5rem;
+            height: 4rem;
+            position: relative;
+        }
+
+        .game-btn button {
+            outline: none;
+            width: 100%;
+            background-color: #fff;
+            border: none;
+            height: .8rem;
+            border-radius: .3rem;
+            font-size: .4rem;
+            background-image: url('./mldq/images/btn-bg.png');
+            background-repeat: repeat-x;
+            background-position: center;
+            background-size: contain;
+        }
+
+        .has-homepage button {
+            outline: none;
+            width: 48%;
+            background-color: #fff;
+            border: none;
+            height: .8rem;
+            border-radius: .3rem;
+            font-size: .4rem;
+            background-image: url('./mldq/images/btn-bg.png');
+            background-repeat: repeat-x;
+            background-position: center;
+            background-size: contain;
+            background: linear-gradient(to top, #005df2, #00affe);
+            color: #fff;
+        }
+
+        .has-homepage a {
+            display: inline-block;
+            width: 48%;
+        }
+
+        .has-homepage button.homepage-download {
+            background: linear-gradient(to top, #dfbc5c, #fef2cd);
+            color: #333;
+            width: 100%;
+        }
+
+        .close {
+            height: 1.2rem;
+            width: 1.2rem;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: url('./mldq/images/x.png') no-repeat center center;
+        }
+
+        #overlay {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            overflow: hidden;
+            z-index: 111111111
+        }
+    </style>
+</head>
+
+<body class="overflowH" style="font-size: 24px;" cz-shortcut-listen="true">
+<div class="wrap">
+    <!-- 安卓head -->
+    <header class="h5-bot fixed-bot ios" id="fixed-bot">
+
+        <div class="row">
+            <div class="info col-xs-11">
+                <div class="row">
+                    <div class="info-img col-xs-4">
+                        <img src="http://cdn.resource.app.miaoleyouxi.com/app/logo//gameExt/631M1-icon?1553837674547" alt="">
+                    </div>
+                    <div class="info-text col-xs-12">
+                        <h1 class="info-text-title">梦落大秦-刀剑物语</h1>
+                        <p class="info-text-slogen">
+                            唯美角色，炫酷特效，等你 ...
+
+                        </p>
+                        <p class="info-text-dlcount">已有451461下载</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <a href="itms-services://?action=download-manifest&url=https://cdn.resource.app.miaoleyouxi.com/pack/631M1/ios/631M1-M117562_S117562.plist?5.0.5.20181212153340"
+               class="h5-bot-link j-copylink">
+                <div class="game-btn col-xs-5">
+                    <button>立即下载</button>
+                </div>
+            </a>
+
+        </div>
+
+    </header>
+    <!-- 安卓head -->
+
+    <div class="h5-sec">
+        <div id="h5-banner" class="ios">
+            <a class="j-copylink"
+               href="itms-services://?action=download-manifest&url=https://cdn.resource.app.miaoleyouxi.com/pack/631M1/ios/631M1-M117562_S117562.plist?5.0.5.20181212153340">
+                <img src="http://cdn.resource.app.miaoleyouxi.com/app/logo//gameExt/631M1-dl-banner-1?1553837674533"
+                     alt="" class="banner-img">
+                <iframe id="tmp_downloadhelper_iframe" style="display: none;"></iframe>
+            </a>
+        </div>
+
+        <a href="#anchor" class="act">
+            <img src="http://cdn.resource.app.miaoleyouxi.com//app/h5//images/gameExt/gift-icon.png">
+        </a>
+    </div>
+
+    <div class="h5-sec h5-bg" style="background-image:url('http://cdn.resource.app.miaoleyouxi.com/app/logo//gameExt/631M1-banner-2?1553837674547')">
+        <div class="slideshow" style="height:567px;">
+            <div class="swiper-container swiper-container-horizontal swiper-container-ios">
+                <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-705px, 0px, 0px);">
+                    <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="3"
+                         style="width: 322.5px; margin-right: 30px;">
+                        <img src="http://cdn.resource.app.miaoleyouxi.com/app/logo//gameExt/631M1-swipe-4?1553837674547"
+                             alt="">
+                    </div>
+                    <div class="swiper-slide swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="4"
+                         style="width: 322.5px; margin-right: 30px;">
+                        <img src="http://cdn.resource.app.miaoleyouxi.com/app/logo//gameExt/631M1-swipe-5?1553837674547"
+                             alt="">
+                    </div>
+                    <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0"
+                         style="width: 322.5px; margin-right: 30px;">
+                        <img src="http://cdn.resource.app.miaoleyouxi.com/app/logo//gameExt/631M1-swipe-1?1553837674547"
+                             alt="">
+                    </div>
+                    <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="1"
+                         style="width: 322.5px; margin-right: 30px;">
+                        <img src="http://cdn.resource.app.miaoleyouxi.com/app/logo//gameExt/631M1-swipe-2?1553837674547"
+                             alt="">
+                    </div>
+                    <div class="swiper-slide" data-swiper-slide-index="2" style="width: 322.5px; margin-right: 30px;">
+                        <img src="http://cdn.resource.app.miaoleyouxi.com/app/logo//gameExt/631M1-swipe-3?1553837674547"
+                             alt="">
+                    </div>
+                    <div class="swiper-slide" data-swiper-slide-index="3" style="width: 322.5px; margin-right: 30px;">
+                        <img src="http://cdn.resource.app.miaoleyouxi.com/app/logo//gameExt/631M1-swipe-4?1553837674547"
+                             alt="">
+                    </div>
+                    <div class="swiper-slide swiper-slide-duplicate-prev" data-swiper-slide-index="4"
+                         style="width: 322.5px; margin-right: 30px;">
+                        <img src="http://cdn.resource.app.miaoleyouxi.com/app/logo//gameExt/631M1-swipe-5?1553837674547"
+                             alt="">
+                    </div>
+                    <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active"
+                         data-swiper-slide-index="0" style="width: 322.5px; margin-right: 30px;">
+                        <img src="http://cdn.resource.app.miaoleyouxi.com/app/logo//gameExt/631M1-swipe-1?1553837674547"
+                             alt="">
+                    </div>
+                    <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next"
+                         data-swiper-slide-index="1" style="width: 322.5px; margin-right: 30px;">
+                        <img src="http://cdn.resource.app.miaoleyouxi.com/app/logo//gameExt/631M1-swipe-2?1553837674547"
+                             alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="min-height: 12rem" class="h5-sec" id="anchor">
+        <img src="http://cdn.resource.app.miaoleyouxi.com/app/logo//gameExt/631M1-welfare-bg?1553837674533" alt="">
+        <ul class="gift-list row">
+            <li class="gift-item col-xs-8">
+                <div class="gift-item-img"
+                     style="background-image:url('http://cdn.resource.app.miaoleyouxi.com/app/logo//gameExt/631M1-welfare-1?1553837674533');">
+                </div>
+                <p class="gift-name">经验卷轴</p>
+            </li>
+            <li class="gift-item col-xs-8">
+                <div class="gift-item-img"
+                     style="background-image:url('http://cdn.resource.app.miaoleyouxi.com/app/logo//gameExt/631M1-welfare-2?1553837674533');">
+                </div>
+                <p class="gift-name">精美羽翼</p>
+            </li>
+            <li class="gift-item col-xs-8">
+                <div class="gift-item-img"
+                     style="background-image:url('http://cdn.resource.app.miaoleyouxi.com/app/logo//gameExt/631M1-welfare-3?1553837674533');">
+                </div>
+                <p class="gift-name">绝品装备</p>
+            </li>
+            <li class="gift-item col-xs-8">
+                <div class="gift-item-img"
+                     style="background-image:url('http://cdn.resource.app.miaoleyouxi.com/app/logo//gameExt/631M1-welfare-4?1553837674533');">
+                </div>
+                <p class="gift-name">首充福利</p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="popup-overlay" id="popup-overlay"></div>
+    <div class="popup popup-guide" style="display: none;">
+        <div class="reg-head">
+            <p class="reg-title">安装指导</p><span class="close"></span>
+        </div>
+        <div class="guide-wrap">
+            <div class="guide-container swiper-container-horizontal swiper-container-ios">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide swiper-slide-active" style="width: 548px; margin-right: 30px;">
+                        <img src="./mldq/images/guide-img_1.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide swiper-slide-next" style="width: 548px; margin-right: 30px;">
+                        <img src="./mldq/images/guide-img_2.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide" style="width: 548px; margin-right: 30px;">
+                        <img src="./mldq/images/guide-img_3.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide" style="width: 548px; margin-right: 30px;">
+                        <img src="./mldq/images/guide-img_4.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-pagination swiper-pagination-bullets">
+                    <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="weixin-tip" style="display:none;width:100%;position:fixed;top:0;left:0;z-index: 1111111111;background-color:rgba(0,0,0,0.5)">
+        <p style="">
+            <img src="http://cdn.resource.app.miaoleyouxi.com//app/h5//images/gameExt/live_weixin.png" alt="微信打开" width="100%">
+        </p>
+    </div>
+    <div id="overlay" style="display: none;"></div>
+
+    <input type="hidden" id="gameId" value="631M1">
+    <input type="hidden" id="scId" value="M117562_S117562">
+    <input type="hidden" id="mcId" value="M117562">
+
+</div>
+<style>
+    body {
+        margin: 0;
+    }
+</style>
+
+<script src="/mldq/js/jquery-1.7.1.min.js"></script>
+<script src="/mldq/js/swiper.min.js"></script>
+
+<script src="/mldq/js/clipboard.js"></script>
+<script src="/mldq/js/base64.js"></script>
+
+
+<script>
+    $(function () {
+
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = ["Android", "iPhone",
+                "SymbianOS", "Windows Phone",
+                "iPad", "iPod"];
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+
+        var h = document.documentElement.clientHeight //高度
+        var w = document.documentElement.clientWidth //宽度
+        if (IsPC()) {
+            $("body,html").css({
+                background: "rgb(0,0,0)",
+                width: 780,
+                margin: "0 auto",
+            });
+            $("html").css("font-size", "124.3px")
+            $("header").css({
+                width: 780,
+                left: "auto",
+                padding: "0.1rem 0.2rem"
+            });
+            $(".col-xs-11").css({
+                "width": "63.75%"
+            });
+            $(".col-xs-5").css({
+                "width": "35.25%"
+            });
+            $(".has-homepage button").css({
+                "font-size": ".3rem"
+            });
+            $(".h5-bot .info-text-title").css({
+                "font-size": ".2rem",
+                "line-height": ".4rem"
+            });
+            $(".h5-bot .info-text-slogen").css({
+                "font-size": ".18rem"
+            });
+            $(".h5-bot .info-text-dlcount").css({
+                "font-size": ".16rem"
+            });
+            $(".gift-item").css({
+                "margin-bottom": "15px",
+                "height": "2.5rem"
+            });
+            $(".gift-item-img").css({
+                "height": "1.2rem",
+                "margin-top": "0.2rem"
+            })
+        }
+    });
+
+    $(function () {
+        /**
+         * 切记加类名“j-copylink”
+         * */
+        var clipboard = new ClipboardJS('.j-copylink', {
+            text: function () {
+                return Base.encode(JSON.stringify({
+                    gameId: $("#gameId").val(),
+                    mcId: $("#mcId").val(),
+                    scId: $("#scId").val()
+                }))
+            }
+        })
+
+
+        var iosSign = "true";
+        console.log("iosSign:" + iosSign)
+        var a = $('.adr');
+        var i = $('.ios');
+        var h5Banner = $('#h5-banner');
+        var fixedBot = $('#fixed-bot')
+        var ua = navigator.userAgent.toLowerCase();
+        if (/(iphone|ipad)/i.test(ua)) {
+            if (iosSign == "true") {
+                h5Banner.addClass('ios').find('a').attr('href', 'itms-services://?action=download-manifest&url=https://cdn.resource.app.miaoleyouxi.com/pack/631M1/ios/631M1-M117562_S117562.plist?5.0.5.20181212153340').children('img').attr('src', 'http://cdn.resource.app.miaoleyouxi.com/app/logo//gameExt/631M1-dl-banner-1?1553837674533');
+                fixedBot.addClass('ios').find('a').attr('href', 'itms-services://?action=download-manifest&url=https://cdn.resource.app.miaoleyouxi.com/pack/631M1/ios/631M1-M117562_S117562.plist?5.0.5.20181212153340').find('.game-btn button').text('立即下载');
+                fixedBot.addClass('ios').find('.has-homepage .homepage-download').text('下载');
+                h5Banner.find('a').children('img').on("click", function () {
+                    showguide();
+                });
+                fixedBot.find('a').find('.game-btn button').on("click", function () {
+                    showguide();
+                });
+
+                fixedBot.find('.has-homepage .homepage-download').on("click", function () {
+                    showguide();
+                });
+
+            } else {
+                h5Banner.addClass('ios').find('a').attr('href', 'javascript:showreg();').children('img').attr('src', 'http://cdn.resource.app.miaoleyouxi.com/app/logo//gameExt/631M1-reg-banner-1?1553837674533');
+                fixedBot.addClass('ios').find('a').attr('href', 'javascript:showreg();').find('.game-btn button').text('立即注册');
+                fixedBot.addClass('ios').find('a').attr('href', 'javascript:showreg();').find('.has-homepage .homepage-download').text('注册');
+            }
+        } else {
+            h5Banner.addClass('adr').find('a').attr('href', 'http://hey.sdk.91vv.com/Api/DownloadGame.do?gameId=631M1&mcId=M117562&scId=M117562_S117562&deviceType=2').children('img').attr('src', 'http://cdn.resource.app.miaoleyouxi.com/app/logo//gameExt/631M1-dl-banner-1?1553837674533');
+            fixedBot.addClass('adr').find('a').attr('href', 'http://hey.sdk.91vv.com/Api/DownloadGame.do?gameId=631M1&mcId=M117562&scId=M117562_S117562&deviceType=2').find('.game-btn button').text('立即下载');
+            fixedBot.addClass('adr').find('a').attr('href', 'http://hey.sdk.91vv.com/Api/DownloadGame.do?gameId=631M1&mcId=M117562&scId=M117562_S117562&deviceType=2').find('.has-homepage .homepage-download').text('下载');
+
+        }
+
+        $('.btn-group .btn').click(function () {
+            var ind = $(this).index();
+            $(this).addClass('btn-active').siblings().removeClass('btn-active')
+            $('.reg-body .reg-body-content').eq(ind).show().siblings('.reg-body-content').hide();
+        })
+
+        $('.homepage').click(function () {
+            //官网地址
+            var officialUrl = '';
+            if (officialUrl == undefined || officialUrl == "" || officialUrl == null) {
+                officialUrl = "#";
+            }
+            window.location.href = officialUrl;
+        })
+
+        $('.close').click(function () {
+            $(this).parents('.popup').fadeOut();
+            $('.popup-overlay').fadeOut();
+            $('body').css('overflow', 'scroll');
+        })
+
+    })
+
+    function showguide() {
+        $('.popup-guide').fadeIn();
+        $('body').css('overflow', 'hidden');
+        //异步访问添加下载日志
+        $.ajax({
+            type: "POST",
+            url: "https://g.91vv.com/syslog/iosdownload.log.do",
+            data: {
+                gameId: $("#gameId").val(),
+                mcId: $("#mcId").val(),
+                scId: $("#scId").val()
+            },
+            cache: false,
+            dataType: "jsonp",
+            jsonp: "callbackparam",
+            jsonpCallback: 'success_jsonpCallback',
+            success: function (data) {
+            }
+        });
+        //企业签地址
+
+    }
+
+    function showreg() {
+        $('.popup-reg').fadeIn();
+        $('body').css('overflow', 'hidden');
+    }
+
+    $(function () {
+        $('.adr a').click(function () {
+            var isWeixin = is_weixin();
+            return isWeixin;
+        })
+
+        var ua = navigator.userAgent.toLowerCase();
+        var is_weixin = (function () {
+            if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                showFilter();
+                return false;
+            }
+        });
+
+        function showFilter() {
+            var filter = document.getElementById('weixin-tip');
+            var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight;
+            filter.style.height = winHeight + "px";
+            filter.style.display = 'block';
+        }
+    })
+
+    window.onload = function () {
+        $('#overlay').hide();
+    }
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 2,
+        spaceBetween: 30,
+        loop: true,
+    });
+
+    var swipe = new Swiper('.guide-container', {
+        spaceBetween: 30,
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        on: {
+            init: function () {
+                //Swiper初始化了
+                $('.popup-guide').hide().removeClass('outviewport');
+            },
+        },
+    });
+
+    function gameExtRegister() {
+        var pwd = $("#pwd").val();
+        var mcId = $('#mcId').val();
+        var scId = $('#scId').val();
+        var gameId = $('#gameId').val();
+        if (pwd == "") {
+            alert("请输入密码");
+            return false;
+        }
+        if ($("#pwd").val().length < 6) {
+            alert("请输入6-12位的密码");
+            return;
+        }
+        if ($("#pwd").val().length > 12) {
+            alert("请输入6-12位的密码");
+            return;
+        }
+        if (scId == "" || mcId == "") {
+            alert("缺少渠道");
+            return false;
+        }
+        $.ajax({
+            type: "GET",
+            url: "http://h5cs.miaoleyouxi.com/gameExt.register.do",
+            data: {
+                pwd: pwd,
+                mcId: mcId,
+                gameId: gameId,
+                scId: scId
+            },
+            async: false,
+            dataType: "jsonp",
+            jsonp: "callbackparam",
+            jsonpCallback: 'success_jsonpCallback',
+            success: function(data) {
+                if (data.state == 1) {
+                    $(".reg-container").css("display", "none");
+                    $(".reg-succe").css("display", "block");
+                    $(".reg-succe .user").html(data.userId);
+                    $(".reg-succe .pw").html(pwd);
+                    /* $(".popup-overlay").fadeOut();
+                $('.popup-reg').fadeOut(); */
+                } else {
+                    alert(data.msg);
+                }
+            }
+        });
+    }
+
+    function send(val) {
+        if ($("#phone").val() == "") {
+            alert("请输入手机号码");
+            return;
+        }
+        if (!(/^1[34578]\d{9}$/.test($("#phone").val()))) {
+            alert("手机号码有误，请重填");
+            return;
+        }
+
+        $.ajax({
+            type: "GET",
+            url: "http://h5cs.miaoleyouxi.com/extension.regist.sendmsg.do",
+            data: {
+                phoneNumber: $('#phone').val()
+            },
+            async: false,
+            dataType: "jsonp",
+            jsonp: "callbackparam",
+            jsonpCallback: 'success_jsonpCallback',
+            success: function(data) {
+                if (data != "1") {
+                    alert(data);
+                } else {
+                    settime(val);
+                }
+            }
+
+        });
+
+    }
+
+
+    var countdown = 60;
+
+    function settime(val) {
+        if (countdown == 0) {
+            val.removeAttribute("disabled");
+            val.value = "获取验证码";
+            countdown = 60;
+            return false;
+        } else {
+            val.setAttribute("disabled", true);
+            val.value = "重新发送(" + countdown + ")";
+            countdown--;
+        }
+        setTimeout(function() {
+            settime(val);
+        }, 1000);
+    }
+
+    //倒计时
+    function registPhone() {
+        if ($("#phone").val() == "") {
+            alert("请输入手机号码");
+            return;
+        }
+
+        if ($("#pwd_phone").val() == "") {
+            alert("请输入密码");
+            return;
+        }
+
+        if ($("#code").val() == "") {
+            alert("请输入手机验证码");
+            return;
+        }
+
+        if (!(/^1[34578]\d{9}$/.test($("#phone").val()))) {
+            alert("手机号码有误，请重填");
+            return;
+        }
+
+        if ($("#pwd_phone").val().length < 6) {
+            alert("请输入6-12位的密码");
+            return;
+        }
+        if ($("#pwd_phone").val().length > 12) {
+            alert("请输入6-12位的密码");
+            return;
+        }
+        $.ajax({
+            type: "GET",
+            url: "http://h5cs.miaoleyouxi.com/extension.regist.save.do",
+            data: {
+                phone: $('#phone').val(),
+                pwd: $('#pwd_phone').val(),
+                code: $('#code').val(),
+                mcId: $('#mcId').val(),
+                gameId: $('#gameId').val(),
+                scId: $('#scId').val()
+            },
+            async: false,
+            dataType: "jsonp",
+            jsonp: "callbackparam",
+            jsonpCallback: 'success_jsonpCallback',
+            success: function(data) {
+                if (data != "1") {
+                    alert(data);
+                } else {
+                    $(".reg-container").css("display", "none");
+                    $(".reg-succe").css("display", "block");
+                    $(".reg-succe .user").html($('#phone').val());
+                    $(".reg-succe .pw").html($('#pwd_phone').val());
+                }
+            }
+
+        });
+    }
+</script>
+
+
+</body>
+</html>
