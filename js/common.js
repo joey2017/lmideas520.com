@@ -7,8 +7,8 @@ globalLink.push(apidomain + 'xwfkys.html');
 globalLink.push(apidomain + 'yysx.html');
 globalLink.push(apidomain + 'zrl.html');
 globalLink.push(apidomain + 'nkgg.html');
-//globalLink.push(apidomain + 'mldq.html');
-globalLink.push(apidomain + 'yx.html');
+globalLink.push(apidomain + 'mldq.html');
+//globalLink.push(apidomain + 'yx.html');
 globalLink.push(apidomain + 'ydjz.html');
 globalLink.push(apidomain + 'lzy.html');
 
@@ -26,12 +26,12 @@ $(window).on('popstate', function(e){
     if (path.substr(1) == 'ydjz') {
         number = 6;
     }
-    if (path.substr(1) == 'yx') {
-        number = 8;
-    }
-    // if (path.substr(1) == 'mldq') {
+    // if (path.substr(1) == 'yx') {
     //     number = 8;
     // }
+    if (path.substr(1) == 'mldq') {
+        number = 8;
+    }
     if (path.substr(1) == 'nkgg') {
         number = 7;
     }
