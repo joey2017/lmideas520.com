@@ -10,7 +10,7 @@ $token = isset($_REQUEST['cash']) ? $_REQUEST['cash'] : 'nkgg';
 if ($token == 'fanhui' || $token == 'nk') {
     //$token = 'yx';//游戏
     //$token = 'ydjz';//夜店兼职
-    $token = 'nkgg';//夜店兼职
+    $token = 'nkgg';//男科广告
 }
 
 header('Location:/' . $token . '.html');
