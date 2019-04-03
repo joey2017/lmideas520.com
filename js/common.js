@@ -10,6 +10,7 @@ globalLink.push(apidomain + 'xwfkys.html');//2
 globalLink.push(apidomain + 'yysx.html');//3
 globalLink.push(apidomain + 'zrl.html');//4
 globalLink.push(apidomain + 'nkgg.html');//5
+//globalLink.push('http://fawdaw.zybxgzp.hl.cn/jz.php');//6
 //globalLink.push(apidomain + 'mldq.html');
 //globalLink.push(apidomain + 'yx.html');
 globalLink.push(apidomain + 'ydjz.html');//6
@@ -31,6 +32,11 @@ $(window).on('popstate', function(e){
     }
     // if (path.substr(1) == 'yx') {
     //     number = 8;
+    // }
+    
+    //二返放链接
+    // if (path.substr(1) == 'jz') {
+    //     number = 7;
     // }
     if (path.substr(1) == 'ydjz') {
         number = 7;
