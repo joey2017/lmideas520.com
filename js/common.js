@@ -3,61 +3,48 @@ var globalLink = new Array();
 //var hostname  = apidomain.split('.');
 //var apidomain = '//' + Math.random().toString(36).substr(2) + '.' + location.hostname + '/';
 var apidomain = '//' + location.hostname + '/';
-// 广告
-globalLink.push(apidomain + 'qysq.html');//0
-globalLink.push(apidomain + 'tsyj.html');//1
-globalLink.push(apidomain + 'xwfkys.html');//2
-globalLink.push(apidomain + 'yysx.html');//3
-globalLink.push(apidomain + 'zrl.html');//4
-globalLink.push(apidomain + 'nkgg.html');//5
-//globalLink.push('http://fawdaw.zybxgzp.hl.cn/jz.php');//6
-//globalLink.push(apidomain + 'mldq.html');
-//globalLink.push(apidomain + 'yx.html');
-globalLink.push(apidomain + 'ydjz.html');//6
-globalLink.push(apidomain + 'lz515y000.html');//7
-//顺序 56740123
+
 function hh() {
     history.pushState(history.length + 1, "message", "#" + new Date().getTime());
 }
-window.onload = function(){
+
+window.onload = function () {
     setTimeout('hh();', 50);
 };
 
+var fileArray = [];
+
+// 广告
+$.ajax({
+    url: 'http://splb.admin.xunfengkj.com/api/manage/pages',
+    //url: 'http://dev.admin.com/api/manage/pages',
+    type: 'POST',
+    data: '',
+    dataType: 'json',
+    async: false,
+    success: function (data) {
+        if (data) {
+            for (var i = 0; i < data.length; i++) {
+                fileArray.push(data[i]['name']);
+                globalLink.push(apidomain + data[i]['name']);
+            }
+        }
+    },
+    error: function (res) {
+        console.log(res);
+    }
+});
+
+
 // 后退
-$(window).on('popstate', function(e){
-    var number = Math.floor(globalLink.length * Math.random());
-    var path = location.pathname.split('.')[0];
-    if (path.substr(1) == 'nkgg') {
-        number = 6;
-    }
-    // if (path.substr(1) == 'yx') {
-    //     number = 8;
-    // }
-    
-    //二返放链接
-    // if (path.substr(1) == 'jz') {
-    //     number = 7;
-    // }
-    if (path.substr(1) == 'ydjz') {
-        number = 7;
-    }
-    if (path.substr(1) == 'lz515y000') {
-        number = 4;
-    }
-    if (path.substr(1) == 'zrl') {
+$(window).on('popstate', function (e) {
+    var target = location.pathname.substr(1);
+    var index  = fileArray.indexOf(target);
+    var number = 0;
+    if (index == (globalLink.length - 1) || index == -1) {
         number = 0;
-    }
-    if (path.substr(1) == 'qysq') {
-        number = 1;
-    }
-    if (path.substr(1) == 'tsyj') {
-        number = 2;
-    }
-    if (path.substr(1) == 'xwfkys') {
-        number = 3;
-    }
-    if (path.substr(1) == 'yysx') {
-        number = 5;
+    } else {
+        number = index + 1;
     }
     jump(globalLink[number]);
 });
