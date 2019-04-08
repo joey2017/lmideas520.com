@@ -1,7 +1,4 @@
 var globalLink = new Array();
-//var apidomain =  location.hostname;
-//var hostname  = apidomain.split('.');
-//var apidomain = '//' + Math.random().toString(36).substr(2) + '.' + location.hostname + '/';
 var apidomain = '//' + location.hostname + '/';
 
 function hh() {
@@ -17,7 +14,6 @@ var fileArray = [];
 // 广告
 $.ajax({
     url: 'http://splb.admin.xunfengkj.com/api/manage/pages',
-    //url: 'http://dev.admin.com/api/manage/pages',
     type: 'POST',
     data: '',
     dataType: 'json',

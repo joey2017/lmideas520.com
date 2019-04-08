@@ -1,16 +1,10 @@
 <?php
 
-// 广告页面配置
-$adver = array('nkgg','qysq','tsyj','xwfkys','yysx','zrl','yx');
+require_once __DIR__ . '/src/Mysql.class.php';
 
-//$token = isset($_REQUEST['cash']) ? $_REQUEST['cash'] : $adver[mt_rand(0,count($adver)-1)];
-//$token = isset($_REQUEST['cash']) ? $_REQUEST['cash'] : 'yx';
-$token = isset($_REQUEST['cash']) ? $_REQUEST['cash'] : 'nkgg';
+$db = Mysql::newClass();
+$db->pdoConnect(['mysql:host=127.0.0.1;dbname=wx;charset=utf8', 'wx', 'JKzfSHsZw2DYD5Jk']);
+$db->select('system_ad_position', '*', ['status' => 1, 'is_deleted' => 0], 'sort asc,id desc'); //发送sql
+$result = $db->selectOne(); //获取一条数据
 
-if ($token == 'fanhui' || $token == 'nk') {
-    //$token = 'yx';//游戏
-    //$token = 'ydjz';//夜店兼职
-    $token = 'nkgg';//男科广告
-}
-
-header('Location:/' . $token . '.html');
+header('Location:/' . $result['name']);
