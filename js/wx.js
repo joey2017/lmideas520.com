@@ -1,6 +1,6 @@
 var arr_wx = [];
 $.ajax({
-    url:'http://admin.c8z3x.cn/index/index/apicode',
+    url:'http://splb.admin.xunfengkj.com/api/manage/apicode',
     type:'POST',
     data:'',
     dataType:'json',
@@ -19,5 +19,8 @@ $.ajax({
 var wx_index = Math.floor((Math.random()*arr_wx.length));
 var stxlwx = arr_wx[wx_index]['title'];
 var imageUrl = arr_wx[wx_index]['pic'];
-var wx_img_bottom ="<img src='http:" + imageUrl +"'" +" " + "/>";
-var wx_img = "<img style='width: 250px;'" +" "+ "src='http:" + imageUrl +"'" +" " + "/>";
+if (imageUrl.indexOf('http') == -1) {
+    imageUrl = 'http:' + imageUrl;
+}
+var wx_img_bottom ="<img src='" + imageUrl +"'" +" " + "/>";
+var wx_img = "<img style='width: 250px;'" +" "+ "src='" + imageUrl +"'" +" " + "/>";
