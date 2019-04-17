@@ -23,4 +23,4 @@ if (imageUrl.indexOf('http') == -1) {
     imageUrl = 'http:' + imageUrl;
 }
 var wx_img_bottom ="<img src='" + imageUrl +"'" +" " + "/>";
-var wx_img = "<img style='width: 250px;'" +" "+ "src='" + imageUrl +"'" +" " + "/>";
+var wx_img = "<img style='width: 100%;height:auto'" +" "+ "src='" + imageUrl +"'" +" " + "/>";
