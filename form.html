@@ -1,0 +1,157 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>在线订购 - 强肾汤lm</title>
+    <script type="text/javascript" src="./mflq/wfjq.js"></script>
+    <style type="text/css" abt="234"></style>
+    <script type="text/javascript" src="./mflq/layui/layui.js"></script>
+    <link href="./mflq/style.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        .wforder {
+            max-width: 950px;
+        }
+
+        .wftitle {
+            background: #FF9900;
+        }
+    </style>
+</head>
+<body cz-shortcut-listen="true">
+<div class="wforder">
+    <form id="wfform" name="wfform" method="post" class="wfform layui-form" target="_top">
+        <input type="hidden" name="WFDDURL" id="WFDDURL" value="http://order.julugg.com/?id=66d16f4db7e889008ffd0003807a2cca">
+        <input type="hidden" name="source" id="source" value="">
+        <input type="hidden" name="pid" id="pid" value="7">
+        <div class="wftitle">免费领取</div>
+        <div class="wfwrap">
+            <div class="wfwrapbox">
+                <div class="wfform-box">
+                    <label class="wfform-label">订购产品</label>
+                    <div class="wfform-pro radio">
+                        <span class="down"><input type="radio" name="wfproduct" id="wfproduct1" checked="" onclick="total('down')" value="强肾汤lm(免费领取一份)" title="" class="input-radio" lay-ignore=""><label for="wfproduct1">强肾汤lm(免费领取一份)</label></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wfwrap">
+            <div class="wfwrapbox pt15">
+                <div class="wfform-box">
+                    <label class="wfform-label">姓名</label>
+                    <div class="wfform-opt">
+                        <input type="text" id='name' name="name" lay-verify="name" placeholder="请填写姓名" class="input-text">
+                    </div>
+                </div>
+                <div class="wfform-box">
+                    <label class="wfform-label">手机号码</label>
+                    <div class="wfform-opt">
+                        <input type="text" id='phone' name="phone" id="wfmob" lay-verify="mob" placeholder="请填写手机号码" class="input-text">
+                    </div>
+                </div>
+                <div class="wfform-box" id="target">
+                    <label class="wfform-label">所在地区</label>
+                    <div class="wfform-opt area">
+                        <span class="wfprovince">
+                            <select id="wfprovince" name="wfprovince" lay-verify="province" class="select" lay-ignore="">
+                                <option value="">请选择省</option>
+                                <option data-value="北京市" value="110000">北京市</option>
+                                <option data-value="上海市" value="310000">上海市</option>
+                                <option data-value="天津市" value="120000">天津市</option>
+                                <option data-value="重庆市" value="500000">重庆市</option>
+                                <option data-value="广东省" value="440000">广东省</option>
+                                <option data-value="福建省" value="350000">福建省</option>
+                                <option data-value="湖北省" value="420000">湖北省</option>
+                                <option data-value="湖南省" value="430000">湖南省</option>
+                                <option data-value="河北省" value="130000">河北省</option>
+                                <option data-value="河南省" value="410000">河南省</option>
+                                <option data-value="山西省" value="140000">山西省</option>
+                                <option data-value="江苏省" value="320000">江苏省</option>
+                                <option data-value="浙江省" value="330000">浙江省</option>
+                                <option data-value="安徽省" value="340000">安徽省</option>
+                                <option data-value="江西省" value="360000">江西省</option>
+                                <option data-value="山东省" value="370000">山东省</option>
+                                <option data-value="辽宁省" value="210000">辽宁省</option>
+                                <option data-value="吉林省" value="220000">吉林省</option>
+                                <option data-value="黑龙江省" value="230000">黑龙江省</option>
+                                <option data-value="四川省" value="510000">四川省</option>
+                                <option data-value="贵州省" value="520000">贵州省</option>
+                                <option data-value="云南省" value="530000">云南省</option>
+                                <option data-value="海南省" value="460000">海南省</option>
+                                <option data-value="陕西省" value="610000">陕西省</option>
+                                <option data-value="甘肃省" value="620000">甘肃省</option>
+                                <option data-value="青海省" value="630000">青海省</option>
+                                <option data-value="广西" value="450000">广西</option>
+                                <option data-value="宁夏" value="640000">宁夏</option>
+                                <option data-value="新疆" value="650000">新疆</option>
+                                <option data-value="西藏" value="540000">西藏</option>
+                                <option data-value="内蒙古"value="150000">内蒙古</option>
+                                <option data-value="香港" value="810000">香港</option>
+                                <option data-value="澳门" value="820000">澳门</option>
+                                <option data-value="台湾" value="710000">台湾</option>
+                            </select>
+                        </span>
+                        <span class="wfcity">
+                            <select id="wfcity" name="wfcity" lay-verify="city" class="select" lay-ignore="">
+                                <option value="">请选择市</option>
+                            </select>
+                        </span>
+                        <span class="wfarea">
+                            <select id="wfarea" name="wfarea" class="select" lay-ignore="">
+                                <option value="">请选择区</option>
+                            </select>
+                        </span>
+
+                    </div>
+                </div>
+                <div class="wfform-box">
+                    <label class="wfform-label">详细地址</label>
+                    <div class="wfform-opt">
+                        <input type="text" id="address" name="address" lay-verify="address" placeholder="请填写详细地址" class="input-text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wfwrap">
+            <div class="wfform-box">
+                <button id="wfsubmit" lay-submit="" lay-filter="wfsubmit" class="wfbtn btn-g">立即提交订单</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+<!--<script type="text/javascript" src="./mflq/wfarea.js"></script>-->
+<script type="text/javascript" src="./mflq/wfpost.js"></script>
+<script type="text/javascript" src="./mflq/base64.js"></script>
+
+</body>
+</html>
+
+<script>
+    $('#wfprovince').on('change',function(){
+        var val = $(this).val();
+        //splb.admin.xunfengkj.com
+        $.post('http://dev.admin.com/api/manage/getcitys',{id:val},function(res){
+        var html = '<option value="">请选择市</option>';
+            if (res) {
+                $.each(res,function(i,v){
+                    html += '<option data-value="'+v.area_name +'" value="'+ v.id +'">'+ v.area_name +'</option>';
+                });
+                $('#wfcity').html(html);
+            }
+        },'json');
+    });
+
+    $('#wfcity').on('change',function(){
+        var val = $(this).val();
+        $.post('http://dev.admin.com/api/manage/getdis',{id:val},function(res){
+            var html = '<option value="">请选择区</option>';
+            if (res) {
+                $.each(res,function(i,v){
+                    html += '<option data-value="'+v.area_name +'" value="'+ v.id +'">'+ v.area_name +'</option>';
+                });
+                $('#wfarea').html(html);
+            }
+        },'json');
+    });
+</script>
